@@ -241,44 +241,26 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
 @media(max-width:670px){.demo-logo-image{height:23px;max-width:125px}.footer-logo-image{height:34px}}
 
 
-/* ============================================================== 
-   DECORATIVE CODATA MOTIFS — BALANCED SECTION-SIDE COMPOSITION
-   Asset: tab-icon-1.png
-
-   12 shapes in pairs across six sections. Each pair has a slightly
-   different side, vertical position, size, tilt and opacity so the
-   page feels composed rather than evenly patterned.
-
-   POSITION GUIDE:
-   - The central content ends approx. 619px from the page centre.
-   - Horizontal offsets range from 631px to 714px from centre.
-   - A smaller offset = closer to central content, but NEVER over it.
-   - Larger offsets = farther outward, but NOT at the viewport edge.
-   - Edit opacity to change how noticeable an individual shape is.
-   - Motifs are hidden below 1750px viewport width to avoid overlap.
+/* ==============================================================
+   DECORATIVE CODATA MOTIFS — BELOW THE INTERACTIVE DEMO ONLY
+   Image asset: tab-icon-1.png
+   Five carefully spaced icons: 2 bundles, 1 why-us, 2 FAQs.
+   No motifs appear in the hero, catalogue, or interactive demo.
+   To adjust: edit left/right offset, top/bottom, size or opacity.
+   Motifs sit OUTSIDE the central content area, and are hidden
+   on narrower screens so they never overlap readable content.
    ============================================================== */
-.hero,.reports-section,.demo-section,.bundle-section,.why-section,.faq-section{isolation:isolate}
+.bundle-section,.why-section,.faq-section{isolation:isolate}
 .floating-brand{position:absolute;display:block;background:url('tab-icon-1.png') center / contain no-repeat;pointer-events:none;user-select:none;z-index:0;filter:saturate(1.08)}
-.hero>.container,.reports-section>.container,.demo-section>.container,.bundle-section>.container,.why-section>.container,.faq-section>.container{position:relative;z-index:1}
-
-/* HERO — understated upper-right accent; softer echo lower-left */
-.float-brand-1 {width:92px;height:92px;opacity:.34;left:calc(50% + clamp(640px, 36vw, 690px));top:15%;transform:rotate(-17deg)}
-.float-brand-7 {width:66px;height:66px;opacity:.19;right:calc(50% + clamp(633px, 37vw, 705px));bottom:17%;transform:rotate(24deg)}
-/* REPORT CATALOGUE — offset across left upper/right lower gutters */
-.float-brand-2 {width:86px;height:86px;opacity:.32;right:calc(50% + clamp(647px, 37vw, 710px));top:19%;transform:rotate(12deg)}
-.float-brand-8 {width:72px;height:72px;opacity:.22;left:calc(50% + clamp(636px, 35vw, 678px));bottom:26%;transform:rotate(-27deg)}
-/* LIVE DEMO — strong lower-right motif, smaller quiet top-left */
-.float-brand-3 {width:102px;height:102px;opacity:.39;left:calc(50% + clamp(633px, 35vw, 675px));bottom:20%;transform:rotate(20deg)}
-.float-brand-9 {width:63px;height:63px;opacity:.17;right:calc(50% + clamp(665px, 38vw, 714px));top:13%;transform:rotate(-13deg)}
-/* BUNDLES — subtle inward right, more prominent left lower accent */
+.bundle-section>.container,.why-section>.container,.faq-section>.container{position:relative;z-index:1}
+/* BUNDLES — smaller light shape at left, larger accent to the right */
 .float-brand-4 {width:76px;height:76px;opacity:.20;right:calc(50% + clamp(635px, 36vw, 690px));top:21%;transform:rotate(-21deg)}
 .float-brand-10{width:91px;height:91px;opacity:.36;left:calc(50% + clamp(652px, 37vw, 705px));bottom:15%;transform:rotate(16deg)}
-/* WHY CODATA — close-in upper-right and lighter left lower */
-.float-brand-5 {width:96px;height:96px;opacity:.36;left:calc(50% + clamp(632px, 35vw, 674px));top:16%;transform:rotate(14deg)}
-.float-brand-11{width:65px;height:65px;opacity:.18;right:calc(50% + clamp(653px, 37vw, 702px));bottom:19%;transform:rotate(-24deg)}
-/* FAQ — quiet right lower, brighter left upper for final balance */
-.float-brand-6 {width:82px;height:82px;opacity:.24;right:calc(50% + clamp(641px, 36vw, 690px));bottom:21%;transform:rotate(-16deg)}
-.float-brand-12{width:75px;height:75px;opacity:.33;left:calc(50% + clamp(658px, 38vw, 712px));top:15%;transform:rotate(22deg)}
+/* WHY CODATA — one medium-strength icon, high on the right */
+.float-brand-5 {width:96px;height:96px;opacity:.30;left:calc(50% + clamp(632px, 35vw, 674px));top:16%;transform:rotate(14deg)}
+/* FAQ — two final accents, on opposite sides at different heights */
+.float-brand-6 {width:82px;height:82px;opacity:.22;right:calc(50% + clamp(641px, 36vw, 690px));bottom:21%;transform:rotate(-16deg)}
+.float-brand-12{width:75px;height:75px;opacity:.31;left:calc(50% + clamp(658px, 38vw, 712px));top:15%;transform:rotate(22deg)}
 @media(max-width:1750px){.floating-brand{display:none}}
 
 </style>
@@ -329,10 +311,8 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
   <!-- MOVE SECTIONS 01-09 by cutting a complete START/END block. -->
     <!-- ================= SECTION 01 START: HERO INTRODUCTION + THREE STEP CARDS ================= -->
     <section class="hero section" aria-labelledby="hero-title">
-    <!-- DECORATIVE ICON: float-brand-1; uses tab-icon-1.png (edit placement in CSS) -->
-    <span class="floating-brand float-brand-1" aria-hidden="true"></span>
-    <!-- Decorative background icon #7 (tab-icon-1.png) -->
-    <span class="floating-brand float-brand-7" aria-hidden="true"></span><div class="container hero-grid">
+    
+    <div class="container hero-grid">
       <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-spark"></span> Reporting made simple.</div><h1 id="hero-title">Brilliant reporting.<br><span>None of the busywork.</span></h1><p class="hero-lead">Turn the spreadsheets you already have into clear, professional management reports. No analyst, no learning curve, no awkward sales call.</p><div class="hero-cta"><a class="btn btn-primary btn-lg" href="#live-demo">Try the live demo <svg class="icon"><use href="#i-arrow-right"/></svg></a><button class="btn btn-outline btn-lg" type="button" data-open-reel><span class="play-dot"><svg class="icon"><use href="#i-play"/></svg></span> Watch how it works</button></div><div class="hero-proof"><span><svg class="icon"><use href="#i-check"/></svg> No sign-up to try</span><span><svg class="icon"><use href="#i-check"/></svg> No technical skills</span><span><svg class="icon"><use href="#i-check"/></svg> Your numbers, made useful</span></div></div>
       <!-- THREE STEP IMAGES: Upload step-1-upload.png, step-2-mapping.png, step-3-report.png beside index.html. Replace each filename below to change the pictures. -->
       <div class="hero-stage" id="how-it-works" aria-label="Three simple steps to your CoData report"><div class="hero-stage-panel"><div class="hero-stage-headline">We make reporting <span>easier.</span></div><div class="steps-grid hero-panel-steps"><article class="step-card"><span class="step-number">01</span><div class="step-illustration ill-upload"><img src="step-1-upload.png" alt="Laptop screen showing a spreadsheet upload" loading="eager"></div><div class="step-copy"><h3>Bring your data</h3><p>Use the sales or business spreadsheet you already have. No need to rebuild it for us.</p></div></article><article class="step-card"><span class="step-number">02</span><div class="step-illustration ill-match"><img src="step-2-mapping.png" alt="Laptop screen showing data field mapping and validation" loading="eager"></div><div class="step-copy"><h3>We make sense of it</h3><p>CoData recognises your columns, checks the numbers and asks you only what it can't work out.</p></div></article><article class="step-card"><span class="step-number">03</span><div class="step-illustration ill-report"><img src="step-3-report.png" alt="Laptop screen showing a professional business performance report" loading="eager"></div><div class="step-copy"><h3>Get your report</h3><p>Open a polished management report with the metrics, charts and headlines that really matter.</p></div></article></div></div></div>
@@ -350,19 +330,15 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
     <!-- ================= SECTION 03 START: PRODUCT CATALOGUE ================= -->
     <!-- Product images are configured via PRODUCT_IMAGES inside the JavaScript below. -->
     <section class="section section-pad reports-section" id="reports">
-    <!-- DECORATIVE ICON: float-brand-2; uses tab-icon-1.png (edit placement in CSS) -->
-    <span class="floating-brand float-brand-2" aria-hidden="true"></span>
-    <!-- Decorative background icon #8 (tab-icon-1.png) -->
-    <span class="floating-brand float-brand-8" aria-hidden="true"></span><div class="container"><div class="section-heading heading-split"><div><span class="section-eyebrow">THE REPORT COLLECTION</span><h2>Built for the <span>real world.</span></h2><p>Report products made for shops, construction businesses and teams without an analyst on hand.</p></div><div class="price-cue"><strong>£49.99</strong><span>per report · one-off</span></div></div><div class="category-filters" role="group" aria-label="Filter reports"><button class="filter-pill active" type="button" data-category="all" aria-pressed="true">All reports</button><button class="filter-pill" type="button" data-category="retail" aria-pressed="false">Retail & shops</button><button class="filter-pill" type="button" data-category="construction" aria-pressed="false">Construction & trades</button><button class="filter-pill" type="button" data-category="general" aria-pressed="false">Everyday business</button></div><div class="products-grid" id="products-grid"></div><p class="product-footnote"><svg class="icon"><use href="#i-info"/></svg> Product catalogue previews. Reports that aren't ready to purchase are clearly marked as coming soon.</p></div></section>
+    
+    <div class="container"><div class="section-heading heading-split"><div><span class="section-eyebrow">THE REPORT COLLECTION</span><h2>Built for the <span>real world.</span></h2><p>Report products made for shops, construction businesses and teams without an analyst on hand.</p></div><div class="price-cue"><strong>£49.99</strong><span>per report · one-off</span></div></div><div class="category-filters" role="group" aria-label="Filter reports"><button class="filter-pill active" type="button" data-category="all" aria-pressed="true">All reports</button><button class="filter-pill" type="button" data-category="retail" aria-pressed="false">Retail & shops</button><button class="filter-pill" type="button" data-category="construction" aria-pressed="false">Construction & trades</button><button class="filter-pill" type="button" data-category="general" aria-pressed="false">Everyday business</button></div><div class="products-grid" id="products-grid"></div><p class="product-footnote"><svg class="icon"><use href="#i-info"/></svg> Product catalogue previews. Reports that aren't ready to purchase are clearly marked as coming soon.</p></div></section>
 
     <!-- ================= SECTION 03 END ================= -->
 
     <!-- ================= SECTION 04 START: INTERACTIVE FLORIST DEMO ================= -->
     <section class="section section-pad demo-section" id="live-demo">
-    <!-- DECORATIVE ICON: float-brand-3; uses tab-icon-1.png (edit placement in CSS) -->
-    <span class="floating-brand float-brand-3" aria-hidden="true"></span>
-    <!-- Decorative background icon #9 (tab-icon-1.png) -->
-    <span class="floating-brand float-brand-9" aria-hidden="true"></span><div class="container"><div class="section-heading center"><span class="section-eyebrow">DON'T TAKE OUR WORD FOR IT</span><h2>Go on. <span>Try it yourself.</span></h2><p>No email address. No booking a call. No awkward sales pitch. See what CoData could do with a florist's sales figures.</p></div><div class="demo-shell"><div class="demo-sidebar"><div class="demo-brand"><!-- DEMO LOGO: change icon-1.png to update it here, or replace the file in GitHub --> <img src="icon-1.png" alt="CoData" class="demo-logo-image" /> <span>demo</span></div><div class="demo-business"><span class="business-mark"><svg class="icon"><use href="#i-flower"/></svg></span><div><strong>Bloom & Stem</strong><small>Example florist business</small></div></div><div class="demo-side-label">YOUR REPORT</div><div class="demo-side-item active"><svg class="icon"><use href="#i-chart"/></svg> Sales performance</div><div class="demo-side-item"><svg class="icon"><use href="#i-box"/></svg> Product sales</div><div class="demo-side-item"><svg class="icon"><use href="#i-file"/></svg> Management summary</div><div class="demo-side-bottom"><svg class="icon"><use href="#i-shield"/></svg><span>Fictional sample data<br>Nothing uploaded or stored</span></div></div><div class="demo-main"><div class="demo-main-head"><div><span class="demo-hello">INTERACTIVE REPORT DEMO</span><h3 id="demo-stage-title">Let's make your report.</h3><p id="demo-stage-subtitle">See how simple it can feel to turn a sales file into a report.</p></div><span class="demo-badge"><span></span> Live example</span></div><div class="demo-progress" aria-label="Demo progress"><button class="active" data-stage="0" type="button"><span>1</span> Use sample data</button><i></i><button data-stage="1" type="button"><span>2</span> Check columns</button><i></i><button data-stage="2" type="button"><span>3</span> See your report</button></div><div id="demo-content" aria-live="polite"></div></div></div><div class="demo-caption"><svg class="icon"><use href="#i-lock"/></svg> This public demo uses fictional data entirely in your browser. There is no real upload, customer data processing or downloadable file.</div></div></section>
+    
+    <div class="container"><div class="section-heading center"><span class="section-eyebrow">DON'T TAKE OUR WORD FOR IT</span><h2>Go on. <span>Try it yourself.</span></h2><p>No email address. No booking a call. No awkward sales pitch. See what CoData could do with a florist's sales figures.</p></div><div class="demo-shell"><div class="demo-sidebar"><div class="demo-brand"><!-- DEMO LOGO: change icon-1.png to update it here, or replace the file in GitHub --> <img src="icon-1.png" alt="CoData" class="demo-logo-image" /> <span>demo</span></div><div class="demo-business"><span class="business-mark"><svg class="icon"><use href="#i-flower"/></svg></span><div><strong>Bloom & Stem</strong><small>Example florist business</small></div></div><div class="demo-side-label">YOUR REPORT</div><div class="demo-side-item active"><svg class="icon"><use href="#i-chart"/></svg> Sales performance</div><div class="demo-side-item"><svg class="icon"><use href="#i-box"/></svg> Product sales</div><div class="demo-side-item"><svg class="icon"><use href="#i-file"/></svg> Management summary</div><div class="demo-side-bottom"><svg class="icon"><use href="#i-shield"/></svg><span>Fictional sample data<br>Nothing uploaded or stored</span></div></div><div class="demo-main"><div class="demo-main-head"><div><span class="demo-hello">INTERACTIVE REPORT DEMO</span><h3 id="demo-stage-title">Let's make your report.</h3><p id="demo-stage-subtitle">See how simple it can feel to turn a sales file into a report.</p></div><span class="demo-badge"><span></span> Live example</span></div><div class="demo-progress" aria-label="Demo progress"><button class="active" data-stage="0" type="button"><span>1</span> Use sample data</button><i></i><button data-stage="1" type="button"><span>2</span> Check columns</button><i></i><button data-stage="2" type="button"><span>3</span> See your report</button></div><div id="demo-content" aria-live="polite"></div></div></div><div class="demo-caption"><svg class="icon"><use href="#i-lock"/></svg> This public demo uses fictional data entirely in your browser. There is no real upload, customer data processing or downloadable file.</div></div></section>
 
     <!-- ================= SECTION 04 END ================= -->
 
@@ -384,8 +360,7 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
     <section class="section section-pad why-section">
     <!-- DECORATIVE ICON: float-brand-5; uses tab-icon-1.png (edit placement in CSS) -->
     <span class="floating-brand float-brand-5" aria-hidden="true"></span>
-    <!-- Decorative background icon #11 (tab-icon-1.png) -->
-    <span class="floating-brand float-brand-11" aria-hidden="true"></span><div class="container why-layout"><div><span class="section-eyebrow">WHY CODATA EXISTS</span><h2>Built by people who know <span>what good reporting looks like.</span></h2><p>After years leading data and analytics for major UK organisations, one thing became clear: most managers don't need a big data project. They need the right numbers, a clear story, and a report they can trust.</p><p>We've taken the thinking that goes into professional management reporting and put it into straightforward, ready-to-use products.</p><a href="#live-demo" class="text-action">See it in action <svg class="icon"><use href="#i-arrow-right"/></svg></a></div><div class="why-values"><div><span class="value-icon"><svg class="icon"><use href="#i-shield"/></svg></span><div><h3>Sound decisions start with sound numbers.</h3><p>Clear metric definitions, data checks and no invented explanations.</p></div></div><div><span class="value-icon"><svg class="icon"><use href="#i-sparkle"/></svg></span><div><h3>Make the important things obvious.</h3><p>Less chart clutter. More clarity on what changed and what needs attention.</p></div></div><div><span class="value-icon"><svg class="icon"><use href="#i-clock"/></svg></span><div><h3>Respect people's time.</h3><p>No mandatory sales calls. No software training just to get a decent report.</p></div></div></div></div></section>
+    <div class="container why-layout"><div><span class="section-eyebrow">WHY CODATA EXISTS</span><h2>Built by people who know <span>what good reporting looks like.</span></h2><p>After years leading data and analytics for major UK organisations, one thing became clear: most managers don't need a big data project. They need the right numbers, a clear story, and a report they can trust.</p><p>We've taken the thinking that goes into professional management reporting and put it into straightforward, ready-to-use products.</p><a href="#live-demo" class="text-action">See it in action <svg class="icon"><use href="#i-arrow-right"/></svg></a></div><div class="why-values"><div><span class="value-icon"><svg class="icon"><use href="#i-shield"/></svg></span><div><h3>Sound decisions start with sound numbers.</h3><p>Clear metric definitions, data checks and no invented explanations.</p></div></div><div><span class="value-icon"><svg class="icon"><use href="#i-sparkle"/></svg></span><div><h3>Make the important things obvious.</h3><p>Less chart clutter. More clarity on what changed and what needs attention.</p></div></div><div><span class="value-icon"><svg class="icon"><use href="#i-clock"/></svg></span><div><h3>Respect people's time.</h3><p>No mandatory sales calls. No software training just to get a decent report.</p></div></div></div></div></section>
 
     <!-- ================= SECTION 07 END ================= -->
 
