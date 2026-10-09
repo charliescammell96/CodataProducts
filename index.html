@@ -241,33 +241,34 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
 @media(max-width:670px){.demo-logo-image{height:23px;max-width:125px}.footer-logo-image{height:34px}}
 
 
-/* ==============================================================
-   DECORATIVE FLOATING CODATA ICONS — SIDE GUTTERS ONLY
-   Asset: tab-icon-1.png
-   The central content is max 1238px wide (619px either side of
-   the page centre). Every decoration starts at least 632px away
-   from the centre, so it CANNOT overlap the content container.
-   Edit opacity / width / height below if desired.
-   On screens too narrow for the side gutters, icons are hidden.
+/* ============================================================== 
+   DECORATIVE FLOATING CODATA ICONS — SCATTERED SIDE GUTTERS
+   Image: tab-icon-1.png (same file as the browser-tab favicon)
+   12 icons: varying size, position, rotation, opacity, and vertical offset.
+   The content boundary is ~619px either side of the centre. Position
+   offsets are always >=632px, keeping every icon beyond the content.
+   To reposition one: edit its left/right clamp, top/bottom and rotation.
+   To lighten/darken one: edit its opacity (0 = invisible; 1 = solid).
+   Icons disappear when the side gutters would be too narrow.
    ============================================================== */
 .hero,.reports-section,.demo-section,.bundle-section,.why-section,.faq-section{isolation:isolate}
 .floating-brand{position:absolute;display:block;background:url('tab-icon-1.png') center / contain no-repeat;pointer-events:none;user-select:none;z-index:0;filter:saturate(1.08)}
 .hero>.container,.reports-section>.container,.demo-section>.container,.bundle-section>.container,.why-section>.container,.faq-section>.container{position:relative;z-index:1}
-/* right-side icon: left edge begins beyond the content's RIGHT boundary */
-.float-brand-1{width:126px;height:126px;opacity:.25;left:calc(50% + 644px);top:10%;transform:rotate(-19deg)}
-.float-brand-7{width:82px;height:82px;opacity:.18;right:calc(50% + 649px);bottom:13%;transform:rotate(17deg)}
-.float-brand-2{width:115px;height:115px;opacity:.29;right:calc(50% + 636px);top:11%;transform:rotate(18deg)}
-.float-brand-8{width:77px;height:77px;opacity:.21;left:calc(50% + 669px);bottom:11%;transform:rotate(-12deg)}
-.float-brand-3{width:136px;height:136px;opacity:.22;left:calc(50% + 642px);bottom:12%;transform:rotate(23deg)}
-.float-brand-9{width:88px;height:88px;opacity:.25;right:calc(50% + 650px);top:18%;transform:rotate(-16deg)}
-.float-brand-4{width:103px;height:103px;opacity:.26;right:calc(50% + 638px);top:13%;transform:rotate(-16deg)}
-.float-brand-10{width:77px;height:77px;opacity:.19;left:calc(50% + 668px);bottom:9%;transform:rotate(31deg)}
-.float-brand-5{width:119px;height:119px;opacity:.24;left:calc(50% + 645px);top:14%;transform:rotate(14deg)}
-.float-brand-11{width:76px;height:76px;opacity:.20;right:calc(50% + 670px);bottom:8%;transform:rotate(-25deg)}
-.float-brand-6{width:116px;height:116px;opacity:.25;right:calc(50% + 642px);bottom:12%;transform:rotate(-21deg)}
-.float-brand-12{width:80px;height:80px;opacity:.19;left:calc(50% + 656px);top:13%;transform:rotate(26deg)}
-/* Narrow screens don't have enough dead space beside the content. */
-@media(max-width:1530px){.floating-brand{display:none}}
+/* Positions vary from 632px (near content) to ~44vw (near screen edge). */
+.float-brand-1 {width:102px;height:102px;opacity:.34;left:calc(50% + clamp(634px, 35vw, 790px));top:8%;transform:rotate(-21deg)}
+.float-brand-7 {width:72px;height:72px;opacity:.15;right:calc(50% + clamp(640px, 41vw, 970px));bottom:8%;transform:rotate(29deg)}
+.float-brand-2 {width:88px;height:88px;opacity:.40;right:calc(50% + clamp(642px, 39vw, 920px));top:12%;transform:rotate(13deg)}
+.float-brand-8 {width:64px;height:64px;opacity:.18;left:calc(50% + clamp(636px, 44vw, 1050px));bottom:9%;transform:rotate(-32deg)}
+.float-brand-3 {width:110px;height:110px;opacity:.29;left:calc(50% + clamp(634px, 36vw, 835px));bottom:15%;transform:rotate(25deg)}
+.float-brand-9 {width:67px;height:67px;opacity:.46;right:calc(50% + clamp(640px, 43vw, 1040px));top:24%;transform:rotate(-12deg)}
+.float-brand-4 {width:94px;height:94px;opacity:.21;right:calc(50% + clamp(636px, 35vw, 780px));top:18%;transform:rotate(-18deg)}
+.float-brand-10{width:69px;height:69px;opacity:.38;left:calc(50% + clamp(640px, 42vw, 990px));bottom:13%;transform:rotate(34deg)}
+.float-brand-5 {width:106px;height:106px;opacity:.42;left:calc(50% + clamp(638px, 40vw, 940px));top:10%;transform:rotate(17deg)}
+.float-brand-11{width:68px;height:68px;opacity:.16;right:calc(50% + clamp(634px, 36vw, 840px));bottom:6%;transform:rotate(-31deg)}
+.float-brand-6 {width:100px;height:100px;opacity:.31;right:calc(50% + clamp(637px, 41vw, 975px));bottom:16%;transform:rotate(-26deg)}
+.float-brand-12{width:65px;height:65px;opacity:.23;left:calc(50% + clamp(632px, 35vw, 790px));top:22%;transform:rotate(11deg)}
+/* Hide where there is insufficient side space for decoration. */
+@media(max-width:1750px){.floating-brand{display:none}}
 
 </style>
   
