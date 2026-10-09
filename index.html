@@ -44,6 +44,56 @@
 .hero-steps-grid .ill-star{right:6px;top:4px;font-size:18px}
 @media(max-width:950px){.hero-process{max-width:650px;margin:0 auto;width:100%}}
 @media(max-width:670px){.hero-steps-grid .step-card{grid-template-columns:115px minmax(0,1fr);column-gap:12px;min-height:135px;padding:12px}.hero-steps-grid .step-illustration{width:115px;height:107px}.hero-steps-grid .step-card h3{font-size:14px}.hero-steps-grid .step-card p{font-size:10px;line-height:1.5}.hero-steps-grid .ill-file{font-size:7px}.hero-steps-grid .match-row{font-size:7px}.hero-steps-grid .ill-report-card{width:91px}}
+
+.hero-grid{min-height:0;grid-template-columns:1fr .9fr;grid-template-areas:"copy decor" "stage stage";align-items:start;gap:28px 42px;padding-top:72px;padding-bottom:72px}
+.hero-copy{grid-area:copy;padding-top:10px}
+.hero-decor{grid-area:decor;position:relative;min-height:250px}
+.hero-decor .hero-blue-halo{inset:-20px 10px 0 10px;background:radial-gradient(circle at 62% 42%,#deeffc 0,rgba(222,239,252,.78) 44%,rgba(222,239,252,.18) 66%,transparent 67%);filter:none}
+.hero-decor-frame{position:absolute;right:28px;top:16px;width:min(430px,92%);height:160px;border:1px solid #edf2f7;border-radius:0;background:rgba(255,255,255,.25)}
+.hero-stage{grid-area:stage;position:relative;margin-top:6px}
+.hero-stage-panel{position:relative;background:linear-gradient(135deg,#1c2634,#0c1017 58%,#131827 100%);border-radius:28px;padding:58px 28px 24px;overflow:hidden;box-shadow:0 30px 80px rgba(26,43,64,.18)}
+.hero-stage-panel:before{content:"";position:absolute;inset:18px 80px auto 80px;height:210px;border:1px solid rgba(255,255,255,.09);border-radius:50%;pointer-events:none}
+.hero-stage-headline{position:absolute;left:50%;top:22px;transform:translateX(-50%);font:800 20px/1.2 'Manrope',sans-serif;letter-spacing:-.04em;color:#fff;text-align:center;z-index:2;white-space:nowrap}
+.hero-stage-headline span{color:#7cb7ff}
+.hero-panel-steps{position:relative;z-index:1;grid-template-columns:repeat(3,1fr);gap:20px}
+.hero-panel-steps .step-card{box-shadow:none;border:1px solid #dfe7f0;border-radius:20px;padding:20px 20px 22px}
+.hero-panel-steps .step-number{font-size:12px}
+.hero-panel-steps .step-illustration{height:145px;margin:14px 0 20px}
+.hero-panel-steps .step-card h3{font-size:17px;margin-bottom:8px}
+.hero-panel-steps .step-card p{font-size:12px;line-height:1.8}
+@media(max-width:950px){.hero-grid{grid-template-columns:1fr;grid-template-areas:"copy" "decor" "stage";gap:18px;padding-top:62px;padding-bottom:72px}.hero-decor{min-height:160px;max-width:650px;width:100%;margin:0 auto}.hero-decor-frame{left:12%;right:12%;width:auto;height:125px}.hero-stage-headline{font-size:18px;top:16px}.hero-stage-panel{padding-top:50px}}
+@media(max-width:670px){.hero-grid{padding-top:51px;padding-bottom:56px}.hero-decor{min-height:110px}.hero-decor .hero-blue-halo{inset:-5px 0 0 0}.hero-decor-frame{left:10px;right:10px;height:84px;top:10px}.hero-stage-panel{border-radius:22px;padding:48px 14px 16px}.hero-stage-headline{font-size:15px;white-space:normal;width:100%;padding-inline:14px;top:12px}.hero-panel-steps{grid-template-columns:1fr;gap:14px}.hero-panel-steps .step-card{padding:18px}.hero-panel-steps .step-illustration{height:132px;margin:12px 0 16px}.hero-panel-steps .step-card h3{font-size:16px}.hero-panel-steps .step-card p{font-size:12px}}
+
+
+/* Hero layout: full-width introduction above tall three-step cards. */
+.hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:0;padding-top:48px;padding-bottom:65px}
+.hero-copy{width:100%;max-width:none;padding:0 0 30px;grid-area:auto}
+.hero-copy h1{font-size:clamp(40px,5vw,67px);max-width:none;margin:17px 0 13px;line-height:1.12}
+.hero-lead{max-width:840px;margin-bottom:20px;line-height:1.65}
+.hero-proof{margin-top:18px}
+.hero-stage{width:100%;margin-top:4px;grid-area:auto}
+.hero-stage-panel{padding:61px 26px 26px}
+.hero-panel-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:19px}
+.hero-panel-steps .step-card{display:flex;flex-direction:column;min-height:355px;padding:19px 20px 23px;border-radius:20px}
+.hero-panel-steps .step-number{font-size:13px}
+.hero-panel-steps .step-illustration{height:205px;width:100%;flex-shrink:0;margin:13px 0 20px}
+.hero-panel-steps .step-card h3{font-size:18px;margin:0 0 9px}
+.hero-panel-steps .step-card p{font-size:13px;line-height:1.7}
+@media(max-width:950px){.hero-grid{gap:0;padding-top:43px;padding-bottom:57px}.hero-copy{width:100%;max-width:none;padding-bottom:28px}.hero-stage{width:100%;margin:0}.hero-panel-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.hero-panel-steps .step-card{min-height:340px;padding:14px}.hero-panel-steps .step-illustration{height:155px;margin:14px 0 18px}.hero-panel-steps .step-card h3{font-size:16px}.hero-panel-steps .step-card p{font-size:12px}.hero-stage-panel{padding:56px 16px 18px}}
+@media(max-width:670px){.hero-grid{padding-top:35px;padding-bottom:45px}.hero-copy{padding-bottom:26px}.hero-copy h1{font-size:clamp(35px,8.5vw,49px)}.hero-lead{max-width:none}.hero-panel-steps{grid-template-columns:1fr;gap:14px}.hero-panel-steps .step-card{min-height:0;padding:18px}.hero-panel-steps .step-illustration{height:175px;margin:12px 0 16px}.hero-panel-steps .step-card h3{font-size:17px}.hero-panel-steps .step-card p{font-size:12px}.hero-stage-panel{padding:52px 14px 16px}}
+
+
+.hero-cta{align-items:center}
+.hero-cta .btn-lg{padding:13px 18px;border-radius:12px;font-size:13px;gap:9px}
+.hero-cta .btn-primary{min-width:0}
+.hero-cta .btn-outline{min-width:0}
+.hero-stage{margin-top:8px;margin-bottom:36px}
+.hero-stage-panel{overflow:visible;padding:58px 26px 0}
+.hero-panel-steps{transform:translateY(34px)}
+.hero-panel-steps .step-card{min-height:372px}
+@media(max-width:950px){.hero-stage{margin-bottom:24px}.hero-panel-steps{transform:translateY(24px)}.hero-stage-panel{padding:56px 16px 0}.hero-cta .btn-lg{padding:12px 16px;font-size:13px}}
+@media(max-width:670px){.hero-stage{margin-bottom:14px}.hero-panel-steps{transform:none}.hero-stage-panel{padding:52px 14px 16px;overflow:hidden}.hero-cta .btn-lg{padding:11px 15px;font-size:12px}}
+
 </style>
   
   
@@ -87,10 +137,7 @@
   <main>
     <section class="hero section" aria-labelledby="hero-title"><div class="container hero-grid">
       <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-spark"></span> Reporting made simple.</div><h1 id="hero-title">Brilliant reporting.<br><span>None of the busywork.</span></h1><p class="hero-lead">Turn the spreadsheets you already have into clear, professional management reports. No analyst, no learning curve, no awkward sales call.</p><div class="hero-cta"><a class="btn btn-primary btn-lg" href="#live-demo">Try the live demo <svg class="icon"><use href="#i-arrow-right"/></svg></a><button class="btn btn-outline btn-lg" type="button" data-open-reel><span class="play-dot"><svg class="icon"><use href="#i-play"/></svg></span> Watch how it works</button></div><div class="hero-proof"><span><svg class="icon"><use href="#i-check"/></svg> No sign-up to try</span><span><svg class="icon"><use href="#i-check"/></svg> No technical skills</span><span><svg class="icon"><use href="#i-check"/></svg> Your numbers, made useful</span></div></div>
-      <div class="hero-art hero-process" id="how-it-works" aria-label="Three simple steps to your CoData report">
-        <div class="hero-blue-halo"></div>
-        <div class="hero-steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-illustration ill-upload"><div class="ill-file"><svg class="icon"><use href="#i-file"></use></svg><span>sales_data.xlsx</span><svg class="icon icon-sm"><use href="#i-check"></use></svg></div><span class="ill-circle"><svg class="icon"><use href="#i-upload"></use></svg></span></div><h3>Bring your data</h3><p>Use the sales or business spreadsheet you already have. No need to rebuild it for us.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-illustration ill-match"><div class="match-row"><span>Item Code</span><svg class="icon"><use href="#i-arrow-right"></use></svg><strong>Product ID <span>✓</span></strong></div><div class="match-row"><span>Qty Sold</span><svg class="icon"><use href="#i-arrow-right"></use></svg><strong>Quantity <span>✓</span></strong></div></div><h3>We make sense of it</h3><p>CoData recognises your columns, checks the numbers and asks you only what it can't work out.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-illustration ill-report"><div class="ill-report-card"><div class="ill-report-head"></div><div class="ill-report-metrics"><i></i><i></i><i></i></div><svg preserveaspectratio="none" viewbox="0 0 190 60"><path d="M0 42 26 39 48 49 74 27 100 35 124 22 146 28 168 12 190 7" fill="none" stroke="#4b9cd3" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg></div><div class="ill-star">✳</div></div><h3>Get your report</h3><p>Open a polished management report with the metrics, charts and headlines that really matter.</p></article></div>
-      </div>
+      <div class="hero-stage" id="how-it-works" aria-label="Three simple steps to your CoData report"><div class="hero-stage-panel"><div class="hero-stage-headline">We make reporting <span>easier.</span></div><div class="steps-grid hero-panel-steps"><article class="step-card"><span class="step-number">01</span><div class="step-illustration ill-upload"><div class="ill-file"><svg class="icon"><use href="#i-file"></use></svg><span>sales_data.xlsx</span><svg class="icon icon-sm"><use href="#i-check"></use></svg></div><span class="ill-circle"><svg class="icon"><use href="#i-upload"></use></svg></span></div><h3>Bring your data</h3><p>Use the sales or business spreadsheet you already have. No need to rebuild it for us.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-illustration ill-match"><div class="match-row"><span>Item Code</span><svg class="icon"><use href="#i-arrow-right"></use></svg><strong>Product ID <span>✓</span></strong></div><div class="match-row"><span>Qty Sold</span><svg class="icon"><use href="#i-arrow-right"></use></svg><strong>Quantity <span>✓</span></strong></div></div><h3>We make sense of it</h3><p>CoData recognises your columns, checks the numbers and asks you only what it can't work out.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-illustration ill-report"><div class="ill-report-card"><div class="ill-report-head"></div><div class="ill-report-metrics"><i></i><i></i><i></i></div><svg preserveAspectRatio="none" viewBox="0 0 190 60"><path d="M0 42 26 39 48 49 74 27 100 35 124 22 146 28 168 12 190 7" fill="none" stroke="#4b9cd3" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg></div><div class="ill-star">✳</div></div><h3>Get your report</h3><p>Open a polished management report with the metrics, charts and headlines that really matter.</p></article></div></div></div>
     </div></section>
 
     <section class="trust-band"><div class="container trust-content"><div class="trust-intro">Built on real experience, not just clever software.</div><div class="trust-points"><span><svg class="icon"><use href="#i-shield"/></svg> Senior UK analytics expertise</span><span><svg class="icon"><use href="#i-clock"/></svg> Designed for busy managers</span><span><svg class="icon"><use href="#i-sparkle"/></svg> Clear, executive-ready insights</span></div></div></section>
