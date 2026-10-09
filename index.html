@@ -242,32 +242,43 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
 
 
 /* ============================================================== 
-   DECORATIVE FLOATING CODATA ICONS — SCATTERED SIDE GUTTERS
-   Image: tab-icon-1.png (same file as the browser-tab favicon)
-   12 icons: varying size, position, rotation, opacity, and vertical offset.
-   The content boundary is ~619px either side of the centre. Position
-   offsets are always >=632px, keeping every icon beyond the content.
-   To reposition one: edit its left/right clamp, top/bottom and rotation.
-   To lighten/darken one: edit its opacity (0 = invisible; 1 = solid).
-   Icons disappear when the side gutters would be too narrow.
+   DECORATIVE CODATA MOTIFS — BALANCED SECTION-SIDE COMPOSITION
+   Asset: tab-icon-1.png
+
+   12 shapes in pairs across six sections. Each pair has a slightly
+   different side, vertical position, size, tilt and opacity so the
+   page feels composed rather than evenly patterned.
+
+   POSITION GUIDE:
+   - The central content ends approx. 619px from the page centre.
+   - Horizontal offsets range from 631px to 714px from centre.
+   - A smaller offset = closer to central content, but NEVER over it.
+   - Larger offsets = farther outward, but NOT at the viewport edge.
+   - Edit opacity to change how noticeable an individual shape is.
+   - Motifs are hidden below 1750px viewport width to avoid overlap.
    ============================================================== */
 .hero,.reports-section,.demo-section,.bundle-section,.why-section,.faq-section{isolation:isolate}
 .floating-brand{position:absolute;display:block;background:url('tab-icon-1.png') center / contain no-repeat;pointer-events:none;user-select:none;z-index:0;filter:saturate(1.08)}
 .hero>.container,.reports-section>.container,.demo-section>.container,.bundle-section>.container,.why-section>.container,.faq-section>.container{position:relative;z-index:1}
-/* Positions vary from 632px (near content) to ~44vw (near screen edge). */
-.float-brand-1 {width:102px;height:102px;opacity:.34;left:calc(50% + clamp(634px, 35vw, 790px));top:8%;transform:rotate(-21deg)}
-.float-brand-7 {width:72px;height:72px;opacity:.15;right:calc(50% + clamp(640px, 41vw, 970px));bottom:8%;transform:rotate(29deg)}
-.float-brand-2 {width:88px;height:88px;opacity:.40;right:calc(50% + clamp(642px, 39vw, 920px));top:12%;transform:rotate(13deg)}
-.float-brand-8 {width:64px;height:64px;opacity:.18;left:calc(50% + clamp(636px, 44vw, 1050px));bottom:9%;transform:rotate(-32deg)}
-.float-brand-3 {width:110px;height:110px;opacity:.29;left:calc(50% + clamp(634px, 36vw, 835px));bottom:15%;transform:rotate(25deg)}
-.float-brand-9 {width:67px;height:67px;opacity:.46;right:calc(50% + clamp(640px, 43vw, 1040px));top:24%;transform:rotate(-12deg)}
-.float-brand-4 {width:94px;height:94px;opacity:.21;right:calc(50% + clamp(636px, 35vw, 780px));top:18%;transform:rotate(-18deg)}
-.float-brand-10{width:69px;height:69px;opacity:.38;left:calc(50% + clamp(640px, 42vw, 990px));bottom:13%;transform:rotate(34deg)}
-.float-brand-5 {width:106px;height:106px;opacity:.42;left:calc(50% + clamp(638px, 40vw, 940px));top:10%;transform:rotate(17deg)}
-.float-brand-11{width:68px;height:68px;opacity:.16;right:calc(50% + clamp(634px, 36vw, 840px));bottom:6%;transform:rotate(-31deg)}
-.float-brand-6 {width:100px;height:100px;opacity:.31;right:calc(50% + clamp(637px, 41vw, 975px));bottom:16%;transform:rotate(-26deg)}
-.float-brand-12{width:65px;height:65px;opacity:.23;left:calc(50% + clamp(632px, 35vw, 790px));top:22%;transform:rotate(11deg)}
-/* Hide where there is insufficient side space for decoration. */
+
+/* HERO — understated upper-right accent; softer echo lower-left */
+.float-brand-1 {width:92px;height:92px;opacity:.34;left:calc(50% + clamp(640px, 36vw, 690px));top:15%;transform:rotate(-17deg)}
+.float-brand-7 {width:66px;height:66px;opacity:.19;right:calc(50% + clamp(633px, 37vw, 705px));bottom:17%;transform:rotate(24deg)}
+/* REPORT CATALOGUE — offset across left upper/right lower gutters */
+.float-brand-2 {width:86px;height:86px;opacity:.32;right:calc(50% + clamp(647px, 37vw, 710px));top:19%;transform:rotate(12deg)}
+.float-brand-8 {width:72px;height:72px;opacity:.22;left:calc(50% + clamp(636px, 35vw, 678px));bottom:26%;transform:rotate(-27deg)}
+/* LIVE DEMO — strong lower-right motif, smaller quiet top-left */
+.float-brand-3 {width:102px;height:102px;opacity:.39;left:calc(50% + clamp(633px, 35vw, 675px));bottom:20%;transform:rotate(20deg)}
+.float-brand-9 {width:63px;height:63px;opacity:.17;right:calc(50% + clamp(665px, 38vw, 714px));top:13%;transform:rotate(-13deg)}
+/* BUNDLES — subtle inward right, more prominent left lower accent */
+.float-brand-4 {width:76px;height:76px;opacity:.20;right:calc(50% + clamp(635px, 36vw, 690px));top:21%;transform:rotate(-21deg)}
+.float-brand-10{width:91px;height:91px;opacity:.36;left:calc(50% + clamp(652px, 37vw, 705px));bottom:15%;transform:rotate(16deg)}
+/* WHY CODATA — close-in upper-right and lighter left lower */
+.float-brand-5 {width:96px;height:96px;opacity:.36;left:calc(50% + clamp(632px, 35vw, 674px));top:16%;transform:rotate(14deg)}
+.float-brand-11{width:65px;height:65px;opacity:.18;right:calc(50% + clamp(653px, 37vw, 702px));bottom:19%;transform:rotate(-24deg)}
+/* FAQ — quiet right lower, brighter left upper for final balance */
+.float-brand-6 {width:82px;height:82px;opacity:.24;right:calc(50% + clamp(641px, 36vw, 690px));bottom:21%;transform:rotate(-16deg)}
+.float-brand-12{width:75px;height:75px;opacity:.33;left:calc(50% + clamp(658px, 38vw, 712px));top:15%;transform:rotate(22deg)}
 @media(max-width:1750px){.floating-brand{display:none}}
 
 </style>
