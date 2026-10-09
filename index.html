@@ -242,30 +242,32 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
 
 
 /* ==============================================================
-   DECORATIVE FLOATING CODATA ICONS — EASY TO EDIT
-   Image used: tab-icon-1.png  (same image as the browser tab).
-   These 12 shapes decorate SECTION edges, not browser edges.
-   Edit each float-brand-# rule for position, size, rotation and opacity.
-   Remove the <span class="floating-brand..."> tags to hide individual shapes.
+   DECORATIVE FLOATING CODATA ICONS — SIDE GUTTERS ONLY
+   Asset: tab-icon-1.png
+   The central content is max 1238px wide (619px either side of
+   the page centre). Every decoration starts at least 632px away
+   from the centre, so it CANNOT overlap the content container.
+   Edit opacity / width / height below if desired.
+   On screens too narrow for the side gutters, icons are hidden.
    ============================================================== */
 .hero,.reports-section,.demo-section,.bundle-section,.why-section,.faq-section{isolation:isolate}
 .floating-brand{position:absolute;display:block;background:url('tab-icon-1.png') center / contain no-repeat;pointer-events:none;user-select:none;z-index:0;filter:saturate(1.08)}
 .hero>.container,.reports-section>.container,.demo-section>.container,.bundle-section>.container,.why-section>.container,.faq-section>.container{position:relative;z-index:1}
-/* Relative to main content's 1190px width, NOT the outside screen */
-.float-brand-1{width:126px;height:126px;opacity:.25;right:max(9%,calc(50% - 470px));top:10%;transform:rotate(-19deg)}
-.float-brand-7{width:82px;height:82px;opacity:.18;left:max(10%,calc(50% - 475px));bottom:13%;transform:rotate(17deg)}
-.float-brand-2{width:115px;height:115px;opacity:.29;left:max(9%,calc(50% - 475px));top:11%;transform:rotate(18deg)}
-.float-brand-8{width:77px;height:77px;opacity:.21;right:max(11%,calc(50% - 465px));bottom:11%;transform:rotate(-12deg)}
-.float-brand-3{width:136px;height:136px;opacity:.22;right:max(9%,calc(50% - 470px));bottom:12%;transform:rotate(23deg)}
-.float-brand-9{width:88px;height:88px;opacity:.25;left:max(11%,calc(50% - 470px));top:18%;transform:rotate(-16deg)}
-.float-brand-4{width:103px;height:103px;opacity:.26;left:max(9%,calc(50% - 475px));top:13%;transform:rotate(-16deg)}
-.float-brand-10{width:77px;height:77px;opacity:.19;right:max(11%,calc(50% - 465px));bottom:9%;transform:rotate(31deg)}
-.float-brand-5{width:119px;height:119px;opacity:.24;right:max(9%,calc(50% - 470px));top:14%;transform:rotate(14deg)}
-.float-brand-11{width:76px;height:76px;opacity:.20;left:max(10%,calc(50% - 470px));bottom:8%;transform:rotate(-25deg)}
-.float-brand-6{width:116px;height:116px;opacity:.25;left:max(9%,calc(50% - 475px));bottom:12%;transform:rotate(-21deg)}
-.float-brand-12{width:80px;height:80px;opacity:.19;right:max(10%,calc(50% - 465px));top:13%;transform:rotate(26deg)}
-@media(max-width:950px){.floating-brand{opacity:.14!important;width:75px!important;height:75px!important}}
-@media(max-width:670px){.floating-brand{display:none}}
+/* right-side icon: left edge begins beyond the content's RIGHT boundary */
+.float-brand-1{width:126px;height:126px;opacity:.25;left:calc(50% + 644px);top:10%;transform:rotate(-19deg)}
+.float-brand-7{width:82px;height:82px;opacity:.18;right:calc(50% + 649px);bottom:13%;transform:rotate(17deg)}
+.float-brand-2{width:115px;height:115px;opacity:.29;right:calc(50% + 636px);top:11%;transform:rotate(18deg)}
+.float-brand-8{width:77px;height:77px;opacity:.21;left:calc(50% + 669px);bottom:11%;transform:rotate(-12deg)}
+.float-brand-3{width:136px;height:136px;opacity:.22;left:calc(50% + 642px);bottom:12%;transform:rotate(23deg)}
+.float-brand-9{width:88px;height:88px;opacity:.25;right:calc(50% + 650px);top:18%;transform:rotate(-16deg)}
+.float-brand-4{width:103px;height:103px;opacity:.26;right:calc(50% + 638px);top:13%;transform:rotate(-16deg)}
+.float-brand-10{width:77px;height:77px;opacity:.19;left:calc(50% + 668px);bottom:9%;transform:rotate(31deg)}
+.float-brand-5{width:119px;height:119px;opacity:.24;left:calc(50% + 645px);top:14%;transform:rotate(14deg)}
+.float-brand-11{width:76px;height:76px;opacity:.20;right:calc(50% + 670px);bottom:8%;transform:rotate(-25deg)}
+.float-brand-6{width:116px;height:116px;opacity:.25;right:calc(50% + 642px);bottom:12%;transform:rotate(-21deg)}
+.float-brand-12{width:80px;height:80px;opacity:.19;left:calc(50% + 656px);top:13%;transform:rotate(26deg)}
+/* Narrow screens don't have enough dead space beside the content. */
+@media(max-width:1530px){.floating-brand{display:none}}
 
 </style>
   
