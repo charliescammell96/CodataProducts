@@ -4,13 +4,14 @@
 CODATA WEBSITE — QUICK EDITING GUIDE
 ===============================================================================
 START HERE:
-  1. CHANGE HEADER LOGO: search for "logo-1.png" near SECTION 00 below.
-  2. CHANGE SIX PRODUCT IMAGES: search for "PRODUCT_IMAGES" in JavaScript
+  1. CHANGE ALL CODATA LOGOS: replace "icon-1.png" (header, demo, footer).
+  2. CHANGE BROWSER TAB ICON: replace "tab-icon-1.png".
+  3. CHANGE SIX PRODUCT IMAGES: search for "PRODUCT_IMAGES" in JavaScript
      near the bottom. Filenames are explicitly labelled by product.
-  3. CHANGE WORDING: search for the exact visible text in the named HTML section.
-  4. CHANGE PRICES: search for "CODATA_CONFIG" near the bottom.
-  5. CHANGE STEP CARD SIZE: search for "EASY EDIT: STEP CARD WIDTH" in CSS.
-  6. MOVE A SECTION: move its full SECTION START/END block within <main>.
+  4. CHANGE WORDING: search for the exact visible text in the named HTML section.
+  5. CHANGE PRICES: search for "CODATA_CONFIG" near the bottom.
+  6. CHANGE STEP CARD SIZE: search for "EASY EDIT: STEP CARD WIDTH" in CSS.
+  7. MOVE A SECTION: move its full SECTION START/END block within <main>.
      DO NOT move the <header>, <footer>, scripts, or shared SVG icon library.
      Keep IDs like id="reports" and id="live-demo" intact, as buttons rely on them.
 
@@ -28,15 +29,15 @@ PAGE ORDER (top to bottom):
   10 Footer
 
 IMAGE GUIDE:
-  Header logo: logo-1.png (real image file)
+  All site logos: icon-1.png — header, interactive demo, footer
   Product 1: temp-image-1.png  — Sales Performance
   Product 2: temp-image-2.png  — Stock & Inventory
   Product 3: temp-image-3.png  — Job Profitability
   Product 4: temp-image-4.png  — Supplier & Purchasing
   Product 5: temp-image-5.png  — Customer Insights
   Product 6: temp-image-6.png  — People & Workforce
-  Three process-card illustrations are DRAWN IN HTML/CSS/SVG, not image files.
-  Footer logo is also drawn with HTML/CSS, not logo-1.png.
+  Browser tab favicon: tab-icon-1.png
+  Process images: step-1-upload.png, step-2-mapping.png, step-3-report.png
   Place image files beside index.html in GitHub; filenames are case-sensitive online.
 
 NOTE: This is still ONE standalone HTML page. The comments are invisible
@@ -56,6 +57,8 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
   <meta property="og:url" content="https://codatahub.com/" />
   
   <title>CoData</title>
+  <!-- BROWSER TAB FAVICON: upload tab-icon-1.png to GitHub beside index.html -->
+  <link rel="icon" type="image/png" href="tab-icon-1.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -231,6 +234,12 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
 .hero-panel-steps .step-illustration::before{display:none}
 .hero-panel-steps .step-illustration img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center}
 
+
+/* SITE BRAND IMAGE SIZES — change icon-1.png in HTML, not the dimensions unless needed */
+.demo-logo-image{display:block;width:auto;height:25px;max-width:145px;object-fit:contain;object-position:left center;flex-shrink:0}
+.footer-logo-image{display:block;width:auto;height:38px;max-width:200px;object-fit:contain;object-position:left center}
+@media(max-width:670px){.demo-logo-image{height:23px;max-width:125px}.footer-logo-image{height:34px}}
+
 </style>
   
   
@@ -267,9 +276,9 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
   </svg>
 
   <!-- ================= SECTION 00 START: NAVIGATION / HEADER ================= -->
-  <!-- HEADER LOGO FILE: replace logo-1.png; put the new image next to index.html -->
+  <!-- SITE LOGO: icon-1.png — same image used in header, demo and footer. -->
   <header class="site-header" id="top"><div class="nav-wrap container">
-    <a class="logo" href="#top" aria-label="CoData home"><img src="logo-1.png" alt="CoData" class="header-logo-image" /></a>
+    <a class="logo" href="#top" aria-label="CoData home"><img src="icon-1.png" alt="CoData" class="header-logo-image" /></a>
     <nav class="desktop-nav" aria-label="Main navigation"><a href="#reports">Reports</a><a href="#how-it-works">How it works</a><a href="#bundles">Bundles</a><a href="#pricing">Pricing</a></nav>
     <div class="nav-actions"><a class="header-link" href="mailto:hello@codatahub.com?subject=CoData%20enquiry">Questions? <svg class="icon"><use href="#i-arrow-up-right"/></svg></a><a class="btn btn-primary btn-sm" href="#live-demo">Try a free demo <svg class="icon"><use href="#i-arrow-right"/></svg></a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button></div>
   </div><nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#reports">Reports</a><a href="#how-it-works">How it works</a><a href="#bundles">Bundles</a><a href="#pricing">Pricing</a><a href="#live-demo">Try a free demo</a></nav></header>
@@ -300,7 +309,7 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
     <!-- ================= SECTION 03 END ================= -->
 
     <!-- ================= SECTION 04 START: INTERACTIVE FLORIST DEMO ================= -->
-    <section class="section section-pad demo-section" id="live-demo"><div class="container"><div class="section-heading center"><span class="section-eyebrow">DON'T TAKE OUR WORD FOR IT</span><h2>Go on. <span>Try it yourself.</span></h2><p>No email address. No booking a call. No awkward sales pitch. See what CoData could do with a florist's sales figures.</p></div><div class="demo-shell"><div class="demo-sidebar"><div class="demo-brand"><span class="mini-logo blue-logo"><span></span><span></span><span></span><span></span></span> codata <span>demo</span></div><div class="demo-business"><span class="business-mark"><svg class="icon"><use href="#i-flower"/></svg></span><div><strong>Bloom & Stem</strong><small>Example florist business</small></div></div><div class="demo-side-label">YOUR REPORT</div><div class="demo-side-item active"><svg class="icon"><use href="#i-chart"/></svg> Sales performance</div><div class="demo-side-item"><svg class="icon"><use href="#i-box"/></svg> Product sales</div><div class="demo-side-item"><svg class="icon"><use href="#i-file"/></svg> Management summary</div><div class="demo-side-bottom"><svg class="icon"><use href="#i-shield"/></svg><span>Fictional sample data<br>Nothing uploaded or stored</span></div></div><div class="demo-main"><div class="demo-main-head"><div><span class="demo-hello">INTERACTIVE REPORT DEMO</span><h3 id="demo-stage-title">Let's make your report.</h3><p id="demo-stage-subtitle">See how simple it can feel to turn a sales file into a report.</p></div><span class="demo-badge"><span></span> Live example</span></div><div class="demo-progress" aria-label="Demo progress"><button class="active" data-stage="0" type="button"><span>1</span> Use sample data</button><i></i><button data-stage="1" type="button"><span>2</span> Check columns</button><i></i><button data-stage="2" type="button"><span>3</span> See your report</button></div><div id="demo-content" aria-live="polite"></div></div></div><div class="demo-caption"><svg class="icon"><use href="#i-lock"/></svg> This public demo uses fictional data entirely in your browser. There is no real upload, customer data processing or downloadable file.</div></div></section>
+    <section class="section section-pad demo-section" id="live-demo"><div class="container"><div class="section-heading center"><span class="section-eyebrow">DON'T TAKE OUR WORD FOR IT</span><h2>Go on. <span>Try it yourself.</span></h2><p>No email address. No booking a call. No awkward sales pitch. See what CoData could do with a florist's sales figures.</p></div><div class="demo-shell"><div class="demo-sidebar"><div class="demo-brand"><!-- DEMO LOGO: change icon-1.png to update it here, or replace the file in GitHub --> <img src="icon-1.png" alt="CoData" class="demo-logo-image" /> <span>demo</span></div><div class="demo-business"><span class="business-mark"><svg class="icon"><use href="#i-flower"/></svg></span><div><strong>Bloom & Stem</strong><small>Example florist business</small></div></div><div class="demo-side-label">YOUR REPORT</div><div class="demo-side-item active"><svg class="icon"><use href="#i-chart"/></svg> Sales performance</div><div class="demo-side-item"><svg class="icon"><use href="#i-box"/></svg> Product sales</div><div class="demo-side-item"><svg class="icon"><use href="#i-file"/></svg> Management summary</div><div class="demo-side-bottom"><svg class="icon"><use href="#i-shield"/></svg><span>Fictional sample data<br>Nothing uploaded or stored</span></div></div><div class="demo-main"><div class="demo-main-head"><div><span class="demo-hello">INTERACTIVE REPORT DEMO</span><h3 id="demo-stage-title">Let's make your report.</h3><p id="demo-stage-subtitle">See how simple it can feel to turn a sales file into a report.</p></div><span class="demo-badge"><span></span> Live example</span></div><div class="demo-progress" aria-label="Demo progress"><button class="active" data-stage="0" type="button"><span>1</span> Use sample data</button><i></i><button data-stage="1" type="button"><span>2</span> Check columns</button><i></i><button data-stage="2" type="button"><span>3</span> See your report</button></div><div id="demo-content" aria-live="polite"></div></div></div><div class="demo-caption"><svg class="icon"><use href="#i-lock"/></svg> This public demo uses fictional data entirely in your browser. There is no real upload, customer data processing or downloadable file.</div></div></section>
 
     <!-- ================= SECTION 04 END ================= -->
 
@@ -330,7 +339,7 @@ in browsers. Product cards and bundles are built by JavaScript at page load.
 
   </main>
   <!-- ================= SECTION 10 START: FOOTER (leave outside main) ================= -->
-  <footer class="footer"><div class="container"><div class="footer-upper"><div class="footer-brand"><a class="logo" href="#top"><span class="logo-glyph"><span></span><span></span><span></span><span></span></span><span>co<span class="logo-color">data</span><i>.</i></span></a><p>Reporting made refreshingly simple.<br>Made for people with a business to run.</p></div><div class="footer-column"><h4>Explore</h4><a href="#reports">Reports</a><a href="#bundles">Report bundles</a><a href="#pricing">Pricing</a><a href="#live-demo">Interactive demo</a></div><div class="footer-column"><h4>CoData</h4><a href="#how-it-works">How it works</a><a href="#questions">Questions</a><a href="mailto:hello@codatahub.com">Contact</a><a href="privacy.html">Privacy information</a></div><div class="footer-column"><h4>Get in touch</h4><a href="mailto:hello@codatahub.com">hello@codatahub.com</a><span>No sales call required.</span></div></div><div class="footer-bottom"><span>© <span id="copyright-year">2026</span> CoData. A trading name of CoData Labs Ltd.</span><span>Built for clarity, not complexity. <span class="footer-flower">✳</span></span></div></div></footer>
+  <footer class="footer"><div class="container"><div class="footer-upper"><div class="footer-brand"><a class="logo" href="#top"><!-- FOOTER LOGO: same icon-1.png as header --> <img src="icon-1.png" alt="CoData" class="footer-logo-image" /></a><p>Reporting made refreshingly simple.<br>Made for people with a business to run.</p></div><div class="footer-column"><h4>Explore</h4><a href="#reports">Reports</a><a href="#bundles">Report bundles</a><a href="#pricing">Pricing</a><a href="#live-demo">Interactive demo</a></div><div class="footer-column"><h4>CoData</h4><a href="#how-it-works">How it works</a><a href="#questions">Questions</a><a href="mailto:hello@codatahub.com">Contact</a><a href="privacy.html">Privacy information</a></div><div class="footer-column"><h4>Get in touch</h4><a href="mailto:hello@codatahub.com">hello@codatahub.com</a><span>No sales call required.</span></div></div><div class="footer-bottom"><span>© <span id="copyright-year">2026</span> CoData. A trading name of CoData Labs Ltd.</span><span>Built for clarity, not complexity. <span class="footer-flower">✳</span></span></div></div></footer>
 
   <!-- ================= SECTION 10 END ================= -->
   <!-- MODALS AND TOAST: used by product details, watch-how-it-works, and interactions. -->
